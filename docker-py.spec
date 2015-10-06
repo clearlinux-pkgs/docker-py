@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 1.4.0
-Release  : 5
+Release  : 6
 URL      : https://pypi.python.org/packages/source/d/docker-py/docker-py-1.4.0.tar.gz
 Source0  : https://pypi.python.org/packages/source/d/docker-py/docker-py-1.4.0.tar.gz
 Summary  : Python client for Docker.
