@@ -1,5 +1,5 @@
 PKG_NAME := docker-py
-URL := https://pypi.python.org/packages/source/d/docker-py/docker-py-1.4.0.tar.gz
+URL := https://pypi.python.org/packages/source/d/docker-py/docker-py-1.5.0.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common
