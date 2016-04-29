@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 1.7.2
-Release  : 10
+Release  : 11
 URL      : https://pypi.python.org/packages/source/d/docker-py/docker-py-1.7.2.tar.gz
 Source0  : https://pypi.python.org/packages/source/d/docker-py/docker-py-1.7.2.tar.gz
 Summary  : Python client for Docker.
