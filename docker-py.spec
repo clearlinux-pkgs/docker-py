@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 1.9.0
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Source0  : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Summary  : Python client for Docker.
@@ -44,15 +44,12 @@ python components for the docker-py package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489348711
-python2 setup.py build -b py2
+export SOURCE_DATE_EPOCH=1489348883
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489348711
 rm -rf %{buildroot}
-python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
-python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+python3 -tt setup.py build -b py3 install --root=%{buildroot}
 
 %files
 %defattr(-,root,root,-)
