@@ -4,19 +4,22 @@
 #
 Name     : docker-py
 Version  : 1.9.0
-Release  : 16
+Release  : 17
 URL      : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Source0  : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Summary  : Python client for Docker.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: docker-py-python
-BuildRequires : flake8-python
+Requires: backports.ssl_match_hostname
+Requires: ipaddress
+Requires: requests
+Requires: six
+Requires: websocket_client
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : python-dev
 BuildRequires : python3-dev
-BuildRequires : requests-python
 BuildRequires : setuptools
 BuildRequires : websocket_client
 
@@ -31,7 +34,6 @@ them, pull/push images, etc.
 %package python
 Summary: python components for the docker-py package.
 Group: Default
-Requires: requests-python
 
 %description python
 python components for the docker-py package.
@@ -42,17 +44,12 @@ python components for the docker-py package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484544487
+export SOURCE_DATE_EPOCH=1489348711
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
-%check
-export http_proxy=http://127.0.0.1:9/
-export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1484544487
+export SOURCE_DATE_EPOCH=1489348711
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
