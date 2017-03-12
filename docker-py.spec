@@ -4,15 +4,13 @@
 #
 Name     : docker-py
 Version  : 1.9.0
-Release  : 18
+Release  : 19
 URL      : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Source0  : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Summary  : Python client for Docker.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: docker-py-python
-Requires: backports.ssl_match_hostname
-Requires: ipaddress
 Requires: requests
 Requires: six
 Requires: websocket_client
@@ -44,7 +42,7 @@ python components for the docker-py package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489348883
+export SOURCE_DATE_EPOCH=1489348993
 python3 setup.py build -b py3
 
 %install
