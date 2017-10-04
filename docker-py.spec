@@ -4,13 +4,14 @@
 #
 Name     : docker-py
 Version  : 1.9.0
-Release  : 23
+Release  : 24
 URL      : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Source0  : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Summary  : Python client for Docker.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: docker-py-legacypython
+Requires: docker-py-python3
 Requires: docker-py-python
 Requires: requests
 Requires: six
@@ -33,6 +34,7 @@ them, pull/push images, etc.
 %package legacypython
 Summary: legacypython components for the docker-py package.
 Group: Default
+Requires: python-core
 
 %description legacypython
 legacypython components for the docker-py package.
@@ -42,9 +44,19 @@ legacypython components for the docker-py package.
 Summary: python components for the docker-py package.
 Group: Default
 Requires: docker-py-legacypython
+Requires: docker-py-python3
 
 %description python
 python components for the docker-py package.
+
+
+%package python3
+Summary: python3 components for the docker-py package.
+Group: Default
+Requires: python3-core
+
+%description python3
+python3 components for the docker-py package.
 
 
 %prep
@@ -55,12 +67,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505001969
+export SOURCE_DATE_EPOCH=1507153266
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1505001969
+export SOURCE_DATE_EPOCH=1507153266
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
@@ -76,5 +88,8 @@ echo ----[ mark ]----
 /usr/lib/python2*/*
 
 %files python
+%defattr(-,root,root,-)
+
+%files python3
 %defattr(-,root,root,-)
 /usr/lib/python3*/*
