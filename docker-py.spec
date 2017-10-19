@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 1.9.0
-Release  : 24
+Release  : 25
 URL      : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Source0  : http://pypi.debian.net/docker-py/docker-py-1.9.0.tar.gz
 Summary  : Python client for Docker.
