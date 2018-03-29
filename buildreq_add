@@ -3,3 +3,6 @@
 websocket_client
 pip
 pip-legacypython
+
+setuptools-python
+setuptools-legacypython
