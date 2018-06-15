@@ -28,7 +28,7 @@ Requires: websocket_client
 BuildRequires : pbr
 BuildRequires : pip
 BuildRequires : pip-legacypython
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 BuildRequires : setuptools-legacypython
