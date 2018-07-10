@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 3.3.0
-Release  : 43
+Release  : 44
 URL      : https://github.com/docker/docker-py/archive/3.3.0.tar.gz
 Source0  : https://github.com/docker/docker-py/archive/3.3.0.tar.gz
 Summary  : No detailed summary available
