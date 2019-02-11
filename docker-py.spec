@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 3.7.0
-Release  : 48
+Release  : 49
 URL      : https://github.com/docker/docker-py/archive/3.7.0.tar.gz
 Source0  : https://github.com/docker/docker-py/archive/3.7.0.tar.gz
 Summary  : No detailed summary available
@@ -17,7 +17,7 @@ Requires: appdirs
 Requires: asn1crypto
 Requires: cffi
 Requires: cryptography
-Requires: dockerpy-creds
+Requires: docker-pycreds
 Requires: idna
 Requires: packaging
 Requires: paramiko
@@ -29,6 +29,7 @@ Requires: six
 Requires: urllib3
 Requires: websocket_client
 BuildRequires : buildreq-distutils3
+BuildRequires : docker-pycreds
 BuildRequires : pip
 BuildRequires : pip-legacypython
 BuildRequires : setuptools-legacypython
@@ -73,7 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549922254
+export SOURCE_DATE_EPOCH=1549923101
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
