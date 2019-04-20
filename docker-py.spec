@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 3.7.2
-Release  : 50
+Release  : 51
 URL      : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
 Source0  : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
 Summary  : No detailed summary available
