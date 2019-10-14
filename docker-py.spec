@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 3.7.2
-Release  : 52
+Release  : 53
 URL      : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
 Source0  : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
 Summary  : No detailed summary available
@@ -28,12 +28,23 @@ Requires: requests
 Requires: six
 Requires: urllib3
 Requires: websocket_client
+BuildRequires : appdirs
+BuildRequires : asn1crypto
 BuildRequires : buildreq-distutils3
+BuildRequires : cffi
+BuildRequires : cryptography
 BuildRequires : docker-pycreds
+BuildRequires : idna
+BuildRequires : packaging
+BuildRequires : paramiko
 BuildRequires : pip
-BuildRequires : pip-legacypython
-BuildRequires : setuptools-legacypython
+BuildRequires : pyOpenSSL
+BuildRequires : pycparser
+BuildRequires : pyparsing
+BuildRequires : requests
 BuildRequires : setuptools-python
+BuildRequires : six
+BuildRequires : urllib3
 BuildRequires : websocket_client
 
 %description
@@ -73,9 +84,13 @@ python3 components for the docker-py package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1554159406
-export LDFLAGS="${LDFLAGS} -fno-lto"
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571089656
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$CFLAGS -fno-lto "
+export FFLAGS="$CFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -83,7 +98,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/docker-py
-cp LICENSE %{buildroot}/usr/share/package-licenses/docker-py/LICENSE
+cp %{_builddir}/docker-py-3.7.2/LICENSE %{buildroot}/usr/share/package-licenses/docker-py/48f08e3492b2d97883a8f5d1f7b92b7d30f11b2c
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -94,7 +109,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/docker-py/LICENSE
+/usr/share/package-licenses/docker-py/48f08e3492b2d97883a8f5d1f7b92b7d30f11b2c
 
 %files python
 %defattr(-,root,root,-)
