@@ -4,10 +4,10 @@
 #
 Name     : docker-py
 Version  : 3.7.2
-Release  : 57
+Release  : 58
 URL      : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
 Source0  : https://github.com/docker/docker-py/archive/3.7.2.tar.gz
-Summary  : Python client for Docker.
+Summary  : A Python library for the Docker Engine API.
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: docker-py-license = %{version}-%{release}
@@ -72,8 +72,7 @@ python components for the docker-py package.
 Summary: python3 components for the docker-py package.
 Group: Default
 Requires: python3-core
-Provides: pypi(docker_py)
-Requires: pypi(docker_pycreds)
+Provides: pypi(docker)
 Requires: pypi(requests)
 Requires: pypi(six)
 Requires: pypi(websocket_client)
@@ -91,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1583536398
+export SOURCE_DATE_EPOCH=1583536598
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
