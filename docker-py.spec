@@ -4,7 +4,7 @@
 #
 Name     : docker-py
 Version  : 5.0.0
-Release  : 68
+Release  : 69
 URL      : https://files.pythonhosted.org/packages/fa/a2/e46d7c1b51394a09271a3b07c3a68deb3a669429beafd444d9553ed52868/docker-5.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/fa/a2/e46d7c1b51394a09271a3b07c3a68deb3a669429beafd444d9553ed52868/docker-5.0.0.tar.gz
 Summary  : A Python library for the Docker Engine API.
